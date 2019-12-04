@@ -7,7 +7,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+REST API of Pick a Park project for Software Project Management exam's project of University of Camerino. 
 
 ## Installation
 
