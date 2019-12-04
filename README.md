@@ -2,9 +2,8 @@
   <img src="/assets/images/logo.png" alt="Pick-A-Park"/>
 </p>
 
-![](https://github.com/ByPassaRe/Pick-a-park-api/workflows/Node%20CI/badge.svg)
-![](https://github.com/ByPassaRe/Pick-a-park-api/workflows/Security/badge.svg)
-![](https://github.com/ByPassaRe/Pick-a-park-api/workflows/Development%20container/badge.svg)
+![](https://github.com/ByPassaRe/Pick-A-Park-RestfulApi/workflows/Node%20CI/badge.svg)
+![](https://github.com/ByPassaRe/Pick-A-Park-RestfulApi/workflows/Security/badge.svg)
 
 ## Description
 
