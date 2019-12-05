@@ -4,7 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-import { ParkingSpotModule } from '../parkingSpot/parkingSpot.module';
+import { ParkingSpotsModule} from './parkingspots.module';
 
 @Module({
   imports: [
@@ -18,7 +18,7 @@ import { ParkingSpotModule } from '../parkingSpot/parkingSpot.module';
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
-    ParkingSpotModule],
+    ParkingSpotsModule],
   controllers: [AppController],
   providers: [AppService],
 })
