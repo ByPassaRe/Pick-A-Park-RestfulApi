@@ -1,7 +1,7 @@
 import { Controller } from '@nestjs/common';
 import { Crud } from '@nestjsx/crud';
 import { User } from './user.entity';
-import { UsersService } from './user.service';
+import { UsersService } from './users.service';
 
 @Crud({
   model: {
