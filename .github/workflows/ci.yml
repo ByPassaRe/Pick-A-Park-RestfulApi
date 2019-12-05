@@ -30,7 +30,7 @@ jobs:
       run: npm test
     
     - name: Set Up Integration Testing environment
-      run: docker-compose up -d
+      run: mysqladmin create test
 
     - name: Integration tests
       run: npm run test:e2e
