@@ -1,0 +1,36 @@
+@baseurl = http://localhost:3000
+
+
+
+GET {{baseurl}}/ HTTP/1.1
+
+###
+
+POST {{baseurl}}/parkingSpots HTTP/1.1
+content-type: application/json
+
+{
+    "status": false,
+    "latitude": "{{$randomInt 0 1000}}", 
+    "longitude": "{{$randomInt 0 1000}}",
+    "isForHandicap": false
+}
+
+###
+
+GET {{baseurl}}/parkingSpots/ HTTP/1.1
+
+###
+
+GET {{baseurl}}/parkingSpots/10 HTTP/1.1
+
+
+###
+
+GET {{baseurl}}/parkingSpots/10/presence HTTP/1.1
+
+###
+
+PUT {{baseurl}}/parkingSpots/10/presence HTTP/1.1
+
+###
