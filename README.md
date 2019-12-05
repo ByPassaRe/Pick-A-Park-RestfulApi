@@ -3,7 +3,6 @@
 </p>
 
 ![](https://github.com/ByPassaRe/Pick-A-Park-RestfulApi/workflows/Node%20CI/badge.svg)
-![](https://github.com/ByPassaRe/Pick-A-Park-RestfulApi/workflows/Security/badge.svg)
 
 ## Description
 
