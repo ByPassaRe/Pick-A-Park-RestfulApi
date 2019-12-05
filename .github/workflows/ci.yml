@@ -20,8 +20,8 @@ jobs:
     - name: Install Dependencies
       run: npm ci
 
-    - name: whoami?
-      run: whoami
+    - name: is sudo available passwordless?
+      run: sudo ls
         
     - name: Build app
       run: npm run build --if-present
