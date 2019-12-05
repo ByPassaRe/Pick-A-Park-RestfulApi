@@ -35,3 +35,7 @@ lerna-debug.log*
 
 # Jest Coverage
 src/coverage/
+
+# HTTP files
+*.http
+*.rest
