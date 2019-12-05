@@ -17,6 +17,11 @@ export class User {
     @Column()
     password: string;
 
+    @Column({
+        default: 0,
+    })
+    balance: number;
+
     @CreateDateColumn()
     createdAt: string;
 
