@@ -1,14 +1,14 @@
 import { Controller } from '@nestjs/common';
 import { Crud } from '@nestjsx/crud';
-import { ParkingSpot } from './parkingspot.entity';
-import { ParkingSpotsService } from './parkingspots.service';
+import { ParkingSpot } from './parkingSpot.entity';
+import { ParkingSpotsService } from './parkingSpots.service';
 
 @Crud({
   model: {
     type: ParkingSpot,
   },
 })
-@Controller('parkingspots')
+@Controller('parkingSpots')
 export class ParkingSpotsController {
   constructor(public service: ParkingSpotsService) {}
 }
