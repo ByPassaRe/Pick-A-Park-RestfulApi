@@ -30,7 +30,15 @@ jobs:
       run: npm test
     
     - name: Set Up Integration Testing environment
-      run: sudo mysqladmin create test
+      run: docker-compose up -d
+    
+    - name: Verify Mysql connection
+      env:
+        PORT: 3307
+      run: |
+        while ! mysqladmin ping -h"127.0.0.1" -P"$PORT" --silent; do
+          sleep 1
+        done
 
     - name: Integration tests
       run: npm run test:e2e
