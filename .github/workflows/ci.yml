@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [10.x, 12.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -17,10 +17,28 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
-      run: |
-        npm ci
-        npm run build --if-present
-        npm test
+    - name: Install Dependencies
+      run: npm ci
+        
+    - name: Build app
+      run: npm run build --if-present
+    
+    - name: Check for security vulnerabilities
+      run: npm audit
+        
+    - name: Unit tests
+      run: npm test
+    
+    - name: Set Up Integration Testing environment
+      run: docker-compose up -d
+    
+    - name: Verify Mysql connection
       env:
-        CI: true
+        PORT: 3307
+      run: |
+        while ! mysqladmin ping -h"127.0.0.1" -P"$PORT" --silent; do
+          sleep 1
+        done
+
+    - name: Integration tests
+      run: npm run test:e2e
