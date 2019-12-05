@@ -4,9 +4,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ParkingSpotsModule } from '../parkingSpot/parkingSpots.module';
 import { UsersModule } from '../user/user.module';
-import { ParkingSpot } from '../parkingSpot/parkingSpot.entity';
-import { User } from '../user/user.entity';
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -16,11 +13,7 @@ import { User } from '../user/user.entity';
       username: 'test',
       password: 'test',
       database: 'test',
-      // Entities
-      entities: [
-        ParkingSpot,
-        User,
-      ],
+      entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
     // Modules
