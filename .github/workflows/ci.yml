@@ -28,6 +28,9 @@ jobs:
         
     - name: Unit tests
       run: npm test
+    
+    - name: Set Up Integration Testing environment
+      run: docker-compose up -d
 
     - name: Integration tests
       run: npm run test:e2e

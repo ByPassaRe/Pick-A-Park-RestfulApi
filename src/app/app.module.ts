@@ -11,7 +11,7 @@ import { ParkingSpotsModule} from '../parkingSpot/parkingSpots.module';
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
-      port: 3306,
+      port: 3307,
       username: 'root',
       password: 'root',
       database: 'test',
