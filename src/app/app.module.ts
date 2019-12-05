@@ -4,7 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-import { ParkingSpotsModule} from './parkingspots.module';
+import { ParkingSpotsModule} from '../parkingSpot/parkingSpots.module';
 
 @Module({
   imports: [
