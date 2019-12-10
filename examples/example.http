@@ -13,8 +13,8 @@ content-type: application/json
 
 {
     "status": false,
-    "latitude": "{{$randomInt 0 1000}}", 
-    "longitude": "{{$randomInt 0 1000}}",
+    "latitude": "{{$randomInt -90 90}}", 
+    "longitude": "{{$randomInt -180 180}}",
     "isForHandicap": false
 }
 ###
@@ -47,7 +47,7 @@ GET {{baseurl}}/parkingSpots/ HTTP/1.1
 
 ###
 
-GET {{baseurl}}/parkingSpots/nearest?latitude=20&longitude=40 HTTP/1.1
+GET {{baseurl}}/parkingSpots/nearest/?latitude=62.00021&longitude=33.00000 HTTP/1.1
 
 ###
 
@@ -64,7 +64,7 @@ content-type: application/json
     "lastName": "Petrelli",
     "username": "corrado.petrelli",
     "password": "aldoaldoaldo",
-    "balance": {{$randomDouble 0 1000}}
+    "balance": 100.2
 }
 
 ### 
