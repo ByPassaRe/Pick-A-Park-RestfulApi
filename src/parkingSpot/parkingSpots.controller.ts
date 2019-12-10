@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Query } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { Crud } from '@nestjsx/crud';
 import { ParkingSpot } from './parkingSpot.entity';
 import { ParkingSpotsService } from './parkingSpots.service';
