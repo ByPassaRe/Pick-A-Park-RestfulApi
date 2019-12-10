@@ -24,10 +24,13 @@ content-type: application/json
 
 {
     "status": false,
-    "latitude": 6.94765, 
-    "longitude": -160.24951,
+    "latitude": 7.94765, 
+    "longitude": -5.24951,
     "isForHandicap": false
 }
+###
+
+DELETE {{baseurl}}/parkingSpots/1
 
 ###
 
@@ -36,8 +39,8 @@ content-type: application/json
 
 {
     "status": false,
-    "latitude": 57.30177, 
-    "longitude": -135.09555,
+    "latitude": 5.30177, 
+    "longitude": -15.09555,
     "isForHandicap": false
 }
 
