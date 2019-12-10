@@ -2,8 +2,6 @@
 
 @baseurl = http://localhost:3000
 
-
-
 GET {{baseurl}}/ HTTP/1.1
 
 ###
@@ -17,6 +15,8 @@ content-type: application/json
     "longitude": "{{$randomInt -180 180}}",
     "isForHandicap": false
 }
+
+
 ###
 
 POST {{baseurl}}/parkingSpots HTTP/1.1
@@ -28,6 +28,19 @@ content-type: application/json
     "longitude": -5.24951,
     "isForHandicap": false
 }
+
+###
+
+POST {{baseurl}}/parkingSpots HTTP/1.1
+content-type: application/json
+
+{
+    "status": false,
+    "latitude": 1.94765, 
+    "longitude": 3.24951,
+    "isForHandicap": false
+}
+
 ###
 
 DELETE {{baseurl}}/parkingSpots/1
@@ -50,7 +63,11 @@ GET {{baseurl}}/parkingSpots/ HTTP/1.1
 
 ###
 
-GET {{baseurl}}/parkingSpots/nearest/?latitude=62.00021&longitude=33.00000 HTTP/1.1
+GET {{baseurl}}/parkingSpots/nearest/ HTTP/1.1
+
+###
+
+GET {{baseurl}}/parkingSpots/nearest?latitude=62.00021&longitude=33.00000 HTTP/1.1
 
 ###
 
