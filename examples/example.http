@@ -13,14 +13,44 @@ content-type: application/json
 
 {
     "status": false,
-    "latitude": "{{$randomInt 0 1000}}", 
-    "longitude": "{{$randomInt 0 1000}}",
+    "latitude": "{{$randomInt -90 90}}", 
+    "longitude": "{{$randomInt -180 180}}",
+    "isForHandicap": false
+}
+###
+
+POST {{baseurl}}/parkingSpots HTTP/1.1
+content-type: application/json
+
+{
+    "status": false,
+    "latitude": 7.94765, 
+    "longitude": -5.24951,
+    "isForHandicap": false
+}
+###
+
+DELETE {{baseurl}}/parkingSpots/1
+
+###
+
+POST {{baseurl}}/parkingSpots HTTP/1.1
+content-type: application/json
+
+{
+    "status": false,
+    "latitude": 5.30177, 
+    "longitude": -15.09555,
     "isForHandicap": false
 }
 
 ###
 
 GET {{baseurl}}/parkingSpots/ HTTP/1.1
+
+###
+
+GET {{baseurl}}/parkingSpots/nearest/?latitude=62.00021&longitude=33.00000 HTTP/1.1
 
 ###
 
@@ -37,7 +67,7 @@ content-type: application/json
     "lastName": "Petrelli",
     "username": "corrado.petrelli",
     "password": "aldoaldoaldo",
-    "balance": {{$randomInt 0 1000}}
+    "balance": 100.2
 }
 
 ### 
