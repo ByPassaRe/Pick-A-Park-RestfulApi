@@ -19,7 +19,7 @@ export class ParkingSpotsService extends TypeOrmCrudService<ParkingSpot> {
       longitude,
     };
 
-    const parkingSpots = await this.repo.find();
+    const parkingSpots = await this.find();
 
     const nearestParkingSpot = parkingSpots.map( parkingSpot => {
 

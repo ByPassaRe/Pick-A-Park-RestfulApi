@@ -39,8 +39,8 @@ content-type: application/json
 
 {
     "status": false,
-    "latitude": 5.30177, 
-    "longitude": -15.09555,
+    "latitude": 65.30177, 
+    "longitude": 33.09555,
     "isForHandicap": false
 }
 
