@@ -12,11 +12,11 @@ export class ParkingSpotsService extends TypeOrmCrudService<ParkingSpot> {
     super(repo);
   }
 
-  async retrieveNearestParkingSpot() {
+  async retrieveNearestParkingSpot(latitude, longitude) {
 
     const currentPosition: GeolibInputCoordinates = {
-      latitude: 0.0,
-      longitude: 0.0,
+      latitude,
+      longitude,
     };
 
     const parkingSpots = await this.repo.find();
