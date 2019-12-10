@@ -18,7 +18,7 @@ export class User {
     @Column()
     password: string;
 
-    @Column({
+    @Column('double', {
         default: 0,
     })
     balance: number;
