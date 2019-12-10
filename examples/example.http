@@ -106,11 +106,11 @@ GET {{baseurl}}/users HTTP/1.1
 
 ###
 
-DELETE {{baseurl}}/users?filter|| HTTP/1.1
+DELETE {{baseurl}}/users/3 HTTP/1.1
 
 ###
 
-GET {{baseurl}}/users?filter=balance||gt||100 HTTP/1.1
+GET {{baseurl}}/users?filter=balance||gt||90 HTTP/1.1
 
 
 ###
