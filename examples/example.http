@@ -29,14 +29,6 @@ GET {{baseurl}}/parkingSpots/10 HTTP/1.1
 
 ###
 
-GET {{baseurl}}/parkingSpots/10/presence HTTP/1.1
-
-###
-
-PUT {{baseurl}}/parkingSpots/10/presence HTTP/1.1
-
-###
-
 POST {{baseurl}}/users/ HTTP/1.1
 content-type: application/json
 
@@ -58,17 +50,6 @@ DELETE {{baseurl}}/users?filter|| HTTP/1.1
 ###
 
 GET {{baseurl}}/users?filter=balance||gt||100 HTTP/1.1
-
-###
-POST {{baseurl}}/users/ HTTP/1.1
-content-type: application/json
-
-{
-    "firstName": "Corrado",
-    "lastName": "Petrelli",
-    "username": "corrado.petrelli",
-    "password": "aldoaldoaldo",
-}
 
 
 ###
