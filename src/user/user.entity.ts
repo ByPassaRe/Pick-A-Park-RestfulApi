@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn} from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, BeforeInsert} from 'typeorm';
+import * as argon2 from 'argon2';
 
 @Entity()
 export class User {
@@ -27,5 +28,11 @@ export class User {
 
     @UpdateDateColumn()
     updatedAt: string;
+
+    @BeforeInsert()
+    async hashPassword() {
+        const hash = await argon2.hash(this.password);
+        this.password = hash;
+    }
 
 }
