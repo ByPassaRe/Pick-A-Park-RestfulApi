@@ -8,10 +8,10 @@ export class ParkingSpot {
     @Column()
     status: boolean;
 
-    @Column()
+    @Column('double')
     latitude: number;
 
-    @Column()
+    @Column('double')
     longitude: number;
 
     @Column()
