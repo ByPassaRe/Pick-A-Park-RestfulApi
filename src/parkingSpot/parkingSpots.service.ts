@@ -25,6 +25,10 @@ export class ParkingSpotsService {
     return await this.parkingSpotRepository.save(parkingSpot);
   }
 
+  async update(parkingSpot: ParkingSpot): Promise<UpdateResult> {
+    return await this.parkingSpotRepository.update(parkingSpot.id, parkingSpot);
+  }
+
   async delete(id: number): Promise<DeleteResult> {
     return await this.parkingSpotRepository.delete(id);
   }

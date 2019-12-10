@@ -65,6 +65,20 @@ GET {{baseurl}}/parkingSpots/ HTTP/1.1
 
 GET {{baseurl}}/parkingSpots/nearest/ HTTP/1.1
 
+
+###
+
+PUT {{baseurl}}/parkingSpots HTTP/1.1
+content-type: application/json
+
+{
+    "id": 1,
+    "status": true,
+    "latitude": 5.30177, 
+    "longitude": -15.09555,
+    "isForHandicap": false
+}
+
 ###
 
 GET {{baseurl}}/parkingSpots/nearest?latitude=62.00021&longitude=33.00000 HTTP/1.1
