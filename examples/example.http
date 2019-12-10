@@ -47,6 +47,10 @@ GET {{baseurl}}/parkingSpots/ HTTP/1.1
 
 ###
 
+GET {{baseurl}}/parkingSpots/nearest HTTP/1.1
+
+###
+
 GET {{baseurl}}/parkingSpots/10 HTTP/1.1
 
 
