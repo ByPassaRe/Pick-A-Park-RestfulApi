@@ -17,6 +17,10 @@ export class ParkingSpotsService {
     return await this.parkingSpotRepository.find();
   }
 
+  async findAllAvailable(): Promise<ParkingSpot[]> {
+    return await this.parkingSpotRepository.find({status: true});
+  }
+
   async findOne(id: number): Promise<ParkingSpot> {
     return await this.parkingSpotRepository.findOne(id);
   }
@@ -40,7 +44,7 @@ export class ParkingSpotsService {
       longitude,
     };
 
-    const parkingSpots = await this.findAll();
+    const parkingSpots = await this.findAllAvailable();
 
     const nearestParkingSpot = parkingSpots.map( parkingSpot => {
 

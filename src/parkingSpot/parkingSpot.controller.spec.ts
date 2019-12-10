@@ -50,10 +50,42 @@ describe('CatsController', () => {
           },
       ];
 
-      jest.spyOn(parkingSpotsService, 'findAll').mockImplementation(async () => parkingSpots);
+      jest.spyOn(parkingSpotsService, 'findAllAvailable').mockImplementation(async () => parkingSpots.filter((parkingSpot) => !parkingSpot.status));
 
       const nearest = await parkingSpotsController.getNearestParkingSpot(0.001, 0.222);
 
       expect(nearest.parkingSpot.id).toBe('2');
+  });
+
+  it('should return the nearest parking spot that is free', async () => {
+    const parkingSpots: ParkingSpot[] = [
+      {
+          id: '1',
+          isForHandicap: false,
+          latitude: 15.11,
+          longitude: 45.1231,
+          status: false,
+      },
+      {
+        id: '2',
+        isForHandicap: false,
+        latitude: 0.45001,
+        longitude: 0.900,
+        status: true,
+      },
+      {
+        id: '3',
+        isForHandicap: false,
+        latitude: 1.11,
+        longitude: 2.1231,
+        status: false,
+      },
+    ];
+
+    jest.spyOn(parkingSpotsService, 'findAllAvailable').mockImplementation(async () => parkingSpots.filter((parkingSpot) => !parkingSpot.status));
+
+    const nearest = await parkingSpotsController.getNearestParkingSpot(0.001, 0.222);
+
+    expect(nearest.parkingSpot.id).toBe('3');
   });
 });
