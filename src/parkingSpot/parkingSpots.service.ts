@@ -30,8 +30,9 @@ export class ParkingSpotsService extends TypeOrmCrudService<ParkingSpot> {
 
       const distance = getDistance(currentPosition, parkingSpotLocation);
 
-      return distance;
-    }).reduce((minDistance, currentDistance) => minDistance < currentDistance ? minDistance : currentDistance);
+      return { distance, parkingSpot };
+
+    }).reduce( (nearest, current) => nearest.distance < current.distance ? nearest : current);
 
     return nearestParkingSpot;
   }
