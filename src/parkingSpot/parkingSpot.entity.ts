@@ -6,7 +6,7 @@ export class ParkingSpot {
     id: string;
 
     @Column()
-    status: boolean;
+    presence: boolean;
 
     @Column('double')
     latitude: number;
