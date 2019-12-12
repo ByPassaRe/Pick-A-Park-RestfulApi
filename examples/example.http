@@ -65,6 +65,15 @@ GET {{baseurl}}/parkingSpots/ HTTP/1.1
 
 GET {{baseurl}}/parkingSpots/nearest/ HTTP/1.1
 
+###
+
+POST {{baseurl}}/parkingSpots/1/presence/false
+
+
+###
+
+POST {{baseurl}}/parkingSpots/1/presence/true
+
 
 ###
 
@@ -110,13 +119,3 @@ DELETE {{baseurl}}/users/3 HTTP/1.1
 
 ###
 
-GET {{baseurl}}/users?filter=balance||gt||90 HTTP/1.1
-
-
-###
-PUT {{baseurl}}/users/1/addToBalance HTTP/1.1
-content-type: application/json
-
-{
-    "ciccio": 1
-}

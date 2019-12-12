@@ -5,7 +5,7 @@ import { ParkingSpot } from './parkingSpot.entity';
 import { getDistance } from 'geolib';
 import { GeolibInputCoordinates } from 'geolib/es/types';
 import { Repository, UpdateResult, DeleteResult } from 'typeorm';
-
+import { boolean } from 'boolean';
 @Injectable()
 export class ParkingSpotsService {
   constructor(
@@ -60,5 +60,12 @@ export class ParkingSpotsService {
     }).reduce( (nearest, current) => nearest.distance < current.distance ? nearest : current);
 
     return nearestParkingSpot;
+  }
+
+  async setPresence(id: number, status: boolean): Promise<UpdateResult> {
+    const parkingSpot = await this.findOne(id);
+    parkingSpot.presence = boolean(status);
+
+    return await this.update(parkingSpot);
   }
 }
