@@ -29,4 +29,12 @@ export class UsersService {
   async delete(id: number): Promise<DeleteResult> {
     return await this.userRepository.delete(id);
   }
+
+  async addToBalance(id: number, amount: number): Promise<UpdateResult> {
+    const user = await this.findOne(id);
+
+    user.balance += Number(amount);
+
+    return await this.update(user);
+  }
 }

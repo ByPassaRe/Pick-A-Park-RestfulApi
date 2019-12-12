@@ -31,4 +31,9 @@ export class UsersController {
   delete(@Param('id') id): Promise<DeleteResult> {
     return this.usersService.delete(id);
   }
+
+  @Put(':id/balance/:amount')
+  addMoney(@Param('id') id, @Param('amount') amount): Promise<UpdateResult> {
+    return this.usersService.addToBalance(id, amount);
+  }
 }

@@ -119,3 +119,5 @@ DELETE {{baseurl}}/users/3 HTTP/1.1
 
 ###
 
+PUT {{baseurl}}/users/5/balance/10 HTTP/1.1
+
