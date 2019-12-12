@@ -37,7 +37,7 @@ export class ParkingSpotsController {
     return this.parkingSpotsService.delete(id);
   }
 
-  @Post(':id/presence/:status')
+  @Put(':id/presence/:status')
   setPresence(@Param('id') id, @Param('status') status): Promise<UpdateResult> {
     return this.parkingSpotsService.setPresence(id, status);
   }

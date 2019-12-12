@@ -67,12 +67,12 @@ GET {{baseurl}}/parkingSpots/nearest/ HTTP/1.1
 
 ###
 
-POST {{baseurl}}/parkingSpots/1/presence/false
+PUT {{baseurl}}/parkingSpots/1/presence/false
 
 
 ###
 
-POST {{baseurl}}/parkingSpots/1/presence/true
+PUT {{baseurl}}/parkingSpots/1/presence/true
 
 
 ###
