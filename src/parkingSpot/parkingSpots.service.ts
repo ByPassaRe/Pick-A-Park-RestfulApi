@@ -18,7 +18,7 @@ export class ParkingSpotsService {
   }
 
   async findAllAvailable(): Promise<ParkingSpot[]> {
-    return await this.parkingSpotRepository.find({status: true});
+    return await this.parkingSpotRepository.find({presence: true});
   }
 
   async findOne(id: number): Promise<ParkingSpot> {
